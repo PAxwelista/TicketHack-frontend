@@ -1,11 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
     <title>Document</title>
     <link rel = "stylesheet" href="style.css"></link>
 </head>
 <body>
+    <div id = "header">
+            <span id = "siteName">Tickethack</span>
+        <div>
+            <a  class = pageLink href="cart/cart.html">
+                <span>Cart</span>
+            </a>
+            <a  class = pageLink href="booking/booking.html">
+                <span>Bookings</span>
+            </a>
+        </div>
+    </div>
+    <div id = "container">
+        <h2>
+            Explore the world effortlessly by train!
+        </h2>
+        <p>
+            Compare, book and enjoy cheap prices for train tickets: your journey stats on Tickethack
+        </p>
+        <div id = "boxes">
+            <div class = "box">
+                <div id = "inputs">
+                    <input id = "departureInput" class = "input" type="text" placeholder="Departure">
+                    <span id = "border"></span>
+                    <input id = "arrivalInput" class = "input" type="text" placeholder="Arrival">
+                    <input id = "dateInput" class = "input" type="date" name="" id="">
+                </div>
+                <button id = "searchButton">Search</button>
+            </div>
+            <div id = "resultBox" class = "box">
+                <img id = "resultImg" src= "images/train.png" alt="train">
+                <span id = "findText">It's time to book your future trip.</span>
+            </div>
+        </div>
+    </div>
     <script src = "script.js"></script>
 </body>
 </html>
