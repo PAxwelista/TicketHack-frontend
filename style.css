@@ -1,3 +1,111 @@
-body{
-    background-color: red;
+body {
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+    height: 100vh;
+    margin: 0px;
+}
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#siteName {
+    padding: 0 40px;
+    color : rgb(18, 173, 111);
+    font-size: 30px;
+    font-weight: bold;
+    font-family:sans-serif;
+    font-stretch: expanded;
+    
+}
+.pageLink {
+    margin: 20px;
+    text-decoration : none;
+
+    color : black;
+}
+#container {
+    flex: 1;
+    text-align: center;
+    color : white;
+    background-image: url("./images/background.jpg");
+    background-size: cover;
+    background-position: top;
+}
+
+#boxes {
+    color : black;
+    display: flex;
+    justify-content: center;
+}
+.box {
+    height: 50vh;
+    width: 25vw;
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    background-color: white;
+    margin: 0px 50px;
+    padding : 20px;
+    border-radius: 10px;
+}
+#resultBox {
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+#inputs {
+    display: flex;
+    flex-direction: column;
+}
+.input {
+    height: 30px;
+    border-radius: 2px;
+    border: 0px solid rgba(0, 0, 0, 0.115);
+    background-color: rgba(128, 128, 128, 0.081);
+}
+.input:hover{
+    background-color: rgba(128, 128, 128, 0.274);
+}
+#dateInput {
+    margin-top: 25px;
+}
+#resultImg {
+    height: 100px;
+    width: 100px;
+    padding-bottom: 40px;
+}
+#findText {
+    border-top: 2px solid rgb(18, 173, 111);
+    padding-top: 40px;
+}
+#border {
+    margin: 0px 2px;
+    border-top: 1px solid rgb(146, 146, 146);
+}
+#searchButton {
+    height: 30px;
+    color : white;
+    background-color: rgb(18, 173, 111);
+    border-radius: 4px;
+}
+.trip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    padding : 10px;
+    margin : 5px;
+    border-radius: 5px;
+    background-color: rgb(255, 244, 232);
+}
+.tripInfo {
+    margin : 4px;
+}
+.bookButton {
+    border-radius: 5px;
+    background-color: rgb(18, 173, 111);
+    color : white
 }
