@@ -4,7 +4,7 @@ const routeStart = "https://tickethack-backend-three-beta.vercel.app/"
 fetch(`${routeStart}panier`)//recuperation des voyages dans la database panier
     .then(response => response.json())
     .then(data => {
-        if (data.alltrips) {
+        if (data.alltrips.some(e=>e.isPaid)) {
             document.querySelector("#cart").innerHTML = `
             <span id = topText>My bookings</span>
             <div id="trajets">
