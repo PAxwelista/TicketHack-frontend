@@ -1,9 +1,11 @@
+const routeStart = "http://localhost:3000/"
+
 document.querySelector("button").addEventListener("click" , ()=>{
     const departure = document.querySelector("#departureInput").value;
     const arrival  = document.querySelector("#arrivalInput").value;
     const date = document.querySelector("#dateInput").value;
     
-    fetch("http://localhost:3000/trips",{
+    fetch(`${routeStart}trips`,{
         method : "POST",
         headers: {
             "Content-Type": "application/json",
@@ -50,7 +52,7 @@ function initBookBtn(){
     const bookBtns = document.querySelectorAll(".bookButton")
     for (const bookBtn of bookBtns){
         bookBtn.addEventListener("click", function(){
-            fetch(`http://localhost:3000/trips/${this.id}`)
+            fetch(`${routeStart}trips/${this.id}`)
                 .then(response=>response.json())
                 .then(data=>{saveTripToCart(data)})
         })
@@ -58,7 +60,7 @@ function initBookBtn(){
 }
 
 function saveTripToCart(data){
-    fetch("http://localhost:3000/panier" , {
+    fetch(`${routesStart}panier` , {
         method : "POST",
         headers: {
             "Content-Type": "application/json",

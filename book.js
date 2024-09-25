@@ -1,5 +1,7 @@
 //------------------------------------------------------------------
-fetch('http://localhost:3000/panier')//recuperation des voyages dans la database panier
+
+const routeStart = "http://localhost:3000/"
+fetch(`${routeStart}panier`)//recuperation des voyages dans la database panier
     .then(response => response.json())
     .then(data => {
         if (data.alltrips) {

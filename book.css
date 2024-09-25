@@ -18,7 +18,6 @@ body {
     color : rgb(18, 173, 111);
     font-size: 30px;
     font-weight: bold;
-    font-family:sans-serif;
     font-stretch: expanded;
     
 }
@@ -37,10 +36,9 @@ body {
     border: 1px solid rgb(228, 228, 228);;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background-color:rgb(228, 228, 228);
-    overflow: auto; 
+    overflow:scroll;
 }  
 
 #cart{

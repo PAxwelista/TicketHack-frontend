@@ -7,7 +7,6 @@ body {
     font-weight: 100;
 }
 #header {
-    font-family: sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,7 +29,6 @@ body {
 .pageLink {
     margin: 0 30px;
     text-decoration : none;
-    font-family: sans-serif;
     color : black;
 }
 
@@ -38,11 +36,9 @@ body {
     border: 1px solid rgb(228, 228, 228);;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background-color:rgb(228, 228, 228);
-    overflow: auto;
-    
+    overflow:scroll;
 }
 
 #cart{
@@ -53,7 +49,7 @@ body {
     justify-content: center;
     width: 70vw;
     border-radius: 15px;
-
+    padding: 10px 0;
 }
 
 .allerretourContainer{
@@ -63,7 +59,6 @@ body {
     display: grid;
     grid-template-columns: 3fr 3fr 3fr 1fr;
     border-radius: 4px;
-    font-family: sans-serif;
     padding: 10px;
     /* display: flex;
     flex-direction: row;
