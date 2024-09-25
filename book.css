@@ -1,6 +1,8 @@
 body {
     height: 100vh;
     margin : 0px;
+    font-family: sans-serif;
+    font-weight: 300;
 }
 #header {
     height: 10%;
@@ -16,7 +18,7 @@ body {
 }
 
 #container{
-       display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -37,26 +39,14 @@ body {
 }
 
 .allerretourContainer{
+    padding: 10px;
     margin: 10px 30px;
     text-align: center;
     background-color: rgb(247, 235, 240);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    
-}
-
-#total{
-    padding: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    color: white;
-    background-color: rgb(6, 26, 71);
-    height: 35px;
-    border-radius: 0px 0px 15px 15px;
-
-       
+    border-radius: 4px;
 }
 
 #button{
@@ -69,8 +59,16 @@ body {
     background-color: rgb(6, 99, 71);
   
 }
-.spanNoBook {
+.spanNoBook{
     margin : 20px;
 }
-
-
+#bottomText{
+    color : rgb(18, 173, 111);
+}
+#separationLine{
+    border: 1px solid rgb(18, 173, 111);
+    margin: 50px 20vw 30px 20vw;
+}
+#topText {
+    padding : 20px;
+}
