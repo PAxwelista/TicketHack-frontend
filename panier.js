@@ -119,4 +119,5 @@ function purchase() {
         });
 };
 
+
 document.querySelector("#button").addEventListener("click", purchase);
