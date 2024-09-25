@@ -1,15 +1,19 @@
+const routeStart= 'https://tickethack-backend-three-beta.vercel.app/'
+
+
+
 //***FONCTION UPDATECOUNTER***-----------------
 
 function updateCounter() {
 
-    fetch('http://localhost:3000/panier/unpaid')
+    fetch(`${routeStart}panier/unpaid`)
         .then(response => response.json())
         .then(data => {
             console.log(data.unpaidTrips);
             let allTrips = data.unpaidTrips;
             let priceCounter = 0;
             for (let trip of allTrips) { priceCounter += trip.price }
-            console.log(priceCounter);
+            //console.log(priceCounter);
             document.querySelector('#prixtotal').textContent = `total: ${priceCounter}€`;;
 
         })
@@ -24,7 +28,7 @@ function activateDeleteButtons() {
         deletes[i].addEventListener("click", function () { //ajout de l'écoute
 
             const userId = deletes[i].value;
-            fetch(`http://localhost:3000/panier`, //clic: suprimer id de la database
+            fetch(`${routeStart}panier`, //clic: suprimer div-id de la database
                 {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json" },
@@ -33,26 +37,38 @@ function activateDeleteButtons() {
                 .then(response => response.json())
                 .then(() => {
                     console.log("trip removed from cart");
-                    this.parentNode.remove();//clic: retirer l'élément parent
                     updateCounter();//clic: mettre à jour le compteur
+                    console.log(this.parentNode.parentNode.parentNode.children.length);
+                    if (this.parentNode.parentNode.parentNode.children.length>1){this.parentNode.parentNode.remove();}//clic: retirer l'élément parent   
+                    else {this.parentNode.parentNode.remove();
+                        displayEmptyCart();
+                    }
 
                 });
 
 
         })
     }//fin de la boucle
-
 }
+//-------------FONCTION AFFICHAGE PANIER VIDE-------------------------
+
+function displayEmptyCart(){document.querySelector("#cart").innerHTML=
+    
+    `<div class="emptyBasket">
+        <span class ="noBooking">No booking yet.</span>
+        <span class ="noBooking">Why not plan a trip?</span>
+
+    </div>`}
 
 //-------------MISE A JOUR DU PANIER A L'AFFICHAGE---------------------
 
-fetch('http://localhost:3000/panier')//recuperation des voyages dans la database panier
+fetch(`${routeStart}panier`)//recuperation des voyages dans la database panier
     .then(response => response.json())
     .then(data => {
         console.log(data);
 
 
-        if (data.alltrips) {
+        if (data.alltrips.some(e=>!e.isPaid))  {
             let cumulatedPrice = 0;
             for (const trip of data.alltrips) {  //ajout des blocs = ajout du innerHTML
 
@@ -80,13 +96,17 @@ fetch('http://localhost:3000/panier')//recuperation des voyages dans la database
             document.querySelector('#prixtotal').textContent = `Total: ${cumulatedPrice}€`;//affichage du total initial
             activateDeleteButtons()//activer boutons delete
 
-        }
+        }//fin du if(data.alltrips)
+else {
+    displayEmptyCart();
+};
+    
     })//fin du .then
 
 //---------------------------------------------------------------------------------------------------------
 
 function purchase() {
-    fetch('http://localhost:3000/panier/book',
+    fetch(`${routeStart}panier/book`,
         {
             method: "PUT",
             headers: { "Content-Type": "application/json" },//updater à isPaid = true les trips du panier

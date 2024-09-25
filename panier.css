@@ -101,4 +101,15 @@ body {
   
 }
 
+.emptyBasket{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 
+}
+
+.noBooking{
+    padding: 20px 0px 20px 0px;
+    font-size: medium; 
+
+}
