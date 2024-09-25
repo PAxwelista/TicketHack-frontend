@@ -70,5 +70,5 @@ function saveTripToCart(data){
             price : data.trip.price
         })
     })
-    window.location.assign("/panier/panier.html")
+    window.location.assign("./panier/panier.html")
 }
