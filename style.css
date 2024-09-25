@@ -3,6 +3,8 @@ body {
     grid-template-rows: 1fr 10fr;
     height: 100vh;
     margin: 0px;
+    font-family: sans-serif;
+    font-weight: 100;
 }
 #header {
     display: flex;
@@ -41,7 +43,7 @@ body {
 .box {
     height: 50vh;
     width: 25vw;
-    min-width: 240px;
+    min-width: 280px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -61,7 +63,7 @@ body {
     flex-direction: column;
 }
 .input {
-    height: 30px;
+    height: 40px;
     border-radius: 2px;
     border: 0px solid rgba(0, 0, 0, 0.115);
     background-color: rgba(128, 128, 128, 0.081);
@@ -73,8 +75,8 @@ body {
     margin-top: 25px;
 }
 #resultImg {
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     padding-bottom: 40px;
 }
 #findText {
@@ -86,10 +88,11 @@ body {
     border-top: 1px solid rgb(146, 146, 146);
 }
 #searchButton {
-    height: 30px;
+    min-height: 40px;
     color : white;
     background-color: rgb(18, 173, 111);
     border-radius: 4px;
+    border : 0;
 }
 .trip {
     display: flex;
@@ -107,5 +110,6 @@ body {
 .bookButton {
     border-radius: 5px;
     background-color: rgb(18, 173, 111);
-    color : white
+    color : white;
+    border : 0;
 }

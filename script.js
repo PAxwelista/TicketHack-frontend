@@ -30,18 +30,20 @@ function SetResultTrip(obj){
     document.querySelector("#resultBox").style.justifyContent = "start";
     document.querySelector("#resultBox").style.alignItems = "stretch";
     for (const trip of obj.trips){
+        let hours = new Date(trip.date).getHours();
+        hours = hours < 10 ? "0"+hours : hours;
+        let minutes = new Date(trip.date).getMinutes();
+        minutes = minutes < 10 ? "0"+minutes : minutes;
         document.querySelector("#resultBox").innerHTML += `
         <div class = "trip">
             <span class = "tripInfo" >${trip.departure} > ${trip.arrival}</span>
-            <span class = "tripInfo">13:34</span>
+            <span class = "tripInfo">${hours}:${minutes}</span>
             <span class = "tripInfo">${trip.price}€</span>
             <button id = ${trip._id} class = "bookButton">Book</button>
         </div>
         `;
     }
     initBookBtn()
-
-
 }
 
 function initBookBtn(){
@@ -50,7 +52,23 @@ function initBookBtn(){
         bookBtn.addEventListener("click", function(){
             fetch(`http://localhost:3000/trips/${this.id}`)
                 .then(response=>response.json())
-                .then(data=>console.log(data))
+                .then(data=>{saveTripToCart(data)})
         })
     }
+}
+
+function saveTripToCart(data){
+    fetch("http://localhost:3000/panier" , {
+        method : "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            departure : data.trip.departure,
+            arrival : data.trip.arrival,
+            date : data.trip.date,
+            price : data.trip.price
+        })
+    })
+    window.location.assign("/panier/panier.html")
 }
