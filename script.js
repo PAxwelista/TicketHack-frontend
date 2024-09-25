@@ -43,7 +43,7 @@ function SetResultTrip(obj){
         </div>
         `;
     }
-    initBookBtn()
+    initBookBtn();
 }
 
 function initBookBtn(){
@@ -69,6 +69,6 @@ function saveTripToCart(data){
             date : data.trip.date,
             price : data.trip.price
         })
-    })
-    window.location.assign("./panier/panier.html")
+    }).then(()=>window.location.assign("panier.html"))
+    
 }
