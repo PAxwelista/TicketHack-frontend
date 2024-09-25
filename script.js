@@ -60,7 +60,7 @@ function initBookBtn(){
 }
 
 function saveTripToCart(data){
-    fetch(`${routesStart}panier` , {
+    fetch(`${routeStart}panier` , {
         method : "POST",
         headers: {
             "Content-Type": "application/json",
