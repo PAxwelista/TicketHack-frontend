@@ -10,6 +10,16 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
+#siteName {
+    padding: 0 40px;
+    color : rgb(18, 173, 111);
+    font-size: 30px;
+    font-weight: bold;
+    font-family:sans-serif;
+    font-stretch: expanded;
+    
+}
 .pageLink {
     margin: 30px;
     text-decoration : none;
@@ -43,9 +53,11 @@ body {
     margin: 10px 30px;
     text-align: center;
     background-color: rgb(247, 235, 240);
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-around; */
     border-radius: 4px;
 }
 
