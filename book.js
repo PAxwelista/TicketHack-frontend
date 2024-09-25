@@ -10,7 +10,6 @@ fetch('http://localhost:3000/panier')//recuperation des voyages dans la database
             <div id = separationLine></div>
             <span id = "bottomText">Enjoy your travels with Tickethack!</span>
             `
-            let cumulatedPrice = 0;
             for (const trip of data.alltrips) {  //ajout des blocs = ajout du innerHTML
                 
                 if (trip.isPaid){
