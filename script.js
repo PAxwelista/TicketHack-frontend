@@ -1,4 +1,4 @@
-const routeStart = "http://localhost:3000/"
+const routeStart = "https://tickethack-backend-three-beta.vercel.app/"
 
 document.querySelector("button").addEventListener("click" , ()=>{
     const departure = document.querySelector("#departureInput").value;
