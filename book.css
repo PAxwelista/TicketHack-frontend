@@ -61,9 +61,6 @@ body {
     background-color: rgb(247, 235, 240);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-around; */
     border-radius: 4px;
 }
 
